@@ -1,0 +1,38 @@
+2026-01-03 14:02:38,097 - INFO - No open positions to close.
+2026-01-03 14:05:48,512 - INFO - initialize() failed, error code
+2026-01-03 14:06:31,422 - INFO - initialize() failed, error code
+2026-01-03 14:07:45,332 - INFO - initialize() failed, error code
+2026-01-03 14:09:44,353 - INFO - initialize() failed, error code
+2026-01-03 14:09:50,480 - INFO - initialize() failed, error code
+2026-01-03 14:09:52,703 - INFO - initialize() failed, error code
+2026-01-03 14:09:58,672 - INFO - initialize() failed, error code
+2026-01-03 14:10:14,022 - INFO - initialize() failed, error code
+2026-01-03 14:11:27,806 - INFO - initialize() failed, error code
+2026-01-03 14:11:38,297 - INFO - initialize() failed, error code
+2026-01-03 14:11:55,752 - INFO - initialize() failed, error code
+2026-01-03 14:12:11,026 - INFO - initialize() failed, error code
+2026-01-03 14:12:19,841 - INFO - initialize() failed, error code
+2026-01-03 14:12:38,022 - INFO - initialize() failed, error code
+2026-01-03 14:12:57,412 - INFO - BTCUSD
+2026-01-03 14:12:57,412 - INFO - Error inside close position function: Object of type datetime is not JSON serializable
+2026-01-03 14:13:09,038 - INFO - BTCUSD
+2026-01-03 14:13:09,038 - INFO - Error inside close position function: Object of type datetime is not JSON serializable
+2026-01-03 14:13:17,642 - INFO - BTCUSD
+2026-01-03 14:13:17,650 - INFO - Error inside close position function: Object of type datetime is not JSON serializable
+2026-01-03 14:13:32,893 - INFO - BTCUSD
+2026-01-03 14:13:32,893 - INFO - Error inside close position function: Object of type datetime is not JSON serializable
+2026-01-03 14:13:43,207 - INFO - BTCUSD
+2026-01-03 14:13:43,207 - INFO - Error inside close position function: Object of type datetime is not JSON serializable
+2026-01-03 14:13:54,045 - INFO - BTCUSD
+2026-01-03 14:13:54,045 - INFO - Error inside close position function: Object of type datetime is not JSON serializable
+2026-01-03 14:14:05,623 - INFO - BTCUSD
+2026-01-03 14:14:05,623 - INFO - Error inside close position function: Object of type datetime is not JSON serializable
+2026-01-03 14:14:16,374 - INFO - BTCUSD
+2026-01-03 14:14:16,374 - INFO - Error inside close position function: Object of type datetime is not JSON serializable
+2026-01-03 14:14:52,982 - INFO - BTCUSD
+2026-01-03 14:14:52,982 - INFO - Error inside close position function: Object of type datetime is not JSON serializable
+2026-01-03 14:15:47,339 - INFO - BTCUSD
+2026-01-03 14:15:47,340 - INFO - Error inside close position function: Object of type builtin_function_or_method is not JSON serializable
+2026-01-03 14:16:08,311 - INFO - BTCUSD
+2026-01-03 14:16:08,313 - INFO - Close attempt 1/4 for position 1562911544...
+2026-01-03 14:16:08,533 - INFO - Closed position for: BTCUSD

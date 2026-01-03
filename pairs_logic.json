@@ -1,0 +1,86 @@
+{
+    "pairs_buffer_mapping": {
+        "GBPNZD": 5,
+        "GBPUSD": 5,
+        "EURCAD": 5,
+        "EURJPY": 5,
+        "AUDJPY": 5,
+        "BTCUSD": 20
+    },
+    "pairs_distance_mapping": {
+        "GBPNZD": 5,
+        "GBPUSD": 5,
+        "EURCAD": 5,
+        "EURJPY": 5,
+        "AUDJPY": 6,
+        "BTCUSD": 150000000
+    },
+    "pairs_stoploss_mapping": {
+        "GBPNZD": 50,
+        "GBPUSD": 50,
+        "EURCAD": 50,
+        "EURJPY": 50,
+        "AUDJPY": 30,
+        "BTCUSD": 1300
+    },
+    "pairs_stoploss_mapping_real": {
+        "GBPNZD": 50,
+        "GBPUSD": 50,
+        "EURCAD": 50,
+        "EURJPY": 50,
+        "AUDJPY": 30,
+        "BTCUSD": 1000
+    },
+    "pairs_stoploss_mapping_input": {
+        "GBPNZD": 50,
+        "GBPUSD": 50,
+        "EURCAD": 50,
+        "EURJPY": 50,
+        "AUDJPY": 30,
+        "BTCUSD": 1000
+    },
+    "pairs_ctc_mapping": {
+        "GBPNZD": 0,
+        "GBPUSD": 0,
+        "EURCAD": 30,
+        "EURJPY": 0,
+        "AUDJPY": 0,
+        "BTCUSD": 500
+    },
+    "pairs_tp_mapping": {
+        "GBPNZD": 40,
+        "GBPUSD": 30,
+        "EURCAD": 0,
+        "EURJPY": 50,
+        "AUDJPY": 40,
+        "BTCUSD": 1000
+    },
+    "pairs_tp_mapping_real": {
+        "GBPNZD": 40,
+        "GBPUSD": 30,
+        "EURCAD": 0,
+        "EURJPY": 50,
+        "AUDJPY": 40,
+        "BTCUSD": 1000
+    },
+    "pairs_candle_distance_mapping": {
+        "GBPNZD": 40,
+        "GBPUSD": 25,
+        "EURCAD": 25,
+        "EURJPY": 35,
+        "AUDJPY": 50,
+        "BTCUSD": 10000000
+    },
+    "pairs_interval_mapping": {
+        "GBPNZD": 1,
+        "GBPUSD": 1,
+        "EURCAD": 30,
+        "EURJPY": 1,
+        "AUDJPY": 1,
+        "BTCUSD": 1
+    },
+    "shift_sl_distance_from_entry": 0,
+    "sl_for_partial_lot": 25
+
+}
+
