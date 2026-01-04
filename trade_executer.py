@@ -61,12 +61,13 @@ def get_current_ist_time():
 
 
 
-def execute_on_exness_mt5(symbol, side, sl, tp, riverse = False):
+def execute_on_exness_mt5(symbol, side, sl, tp, riverse = False, pnl = 0):
     try:
         if not mt5.initialize(path=f"C:/Program Files/MetaTrader 5_{ACCOUNT}/terminal64.exe"):
             logger.info("MT5 initialization failed")
             logger.info(f"Error code: {mt5.last_error()}")
             return False
+
 
         with open("cred.json", 'r') as file:
             cred = json.load(file)
@@ -79,7 +80,7 @@ def execute_on_exness_mt5(symbol, side, sl, tp, riverse = False):
             partial_lot_size = value['partial_lot_size']
 
             if riverse == True:
-                pass
+                tp = abs(pnl / lot_size)
             else:
                 lot_size = lot_size + partial_lot_size
 
@@ -330,16 +331,24 @@ def riverse_trade_master():
 
             if minutes > MINUTES_WAIT_AFTER_RIVERSE and minutes < 12 and pnl < REQUIRED_LOSS_FOR_RIVERSE:
                 riverse_trade_side = "sell" if side == "buy" else "buy"
-                points = 100 / lot_size
                 wait_if_between_news_period(fetch_news=True)
-                execute_on_exness_mt5(symbol=symbol, side=riverse_trade_side, sl= 1000, tp=points, riverse=True )
+                execute_on_exness_mt5(symbol=symbol, side=riverse_trade_side, sl= 1000, tp=0, riverse=True, pnl=pnl)
 
                 pos_file = {}
-
                 with lock_leg_store:
                     with open("store_first_leg.json", "w") as store_pos_file:
                         json.dump(pos_file, store_pos_file)
               
+                with lock_pairs_signal:
+                    with open("pairs_signal.json", "r") as ps:
+                        signal_store = json.load(ps)
+
+                        signal_store[SYMBOL_REAL] = riverse_trade_side
+
+                    with open("pairs_signal.json", "w") as ps:
+                        json.dump(signal_store, ps, indent=4)
+
+                
     except Exception as e:
         logger.info("")
 
@@ -360,12 +369,22 @@ def riverse_position_monitoring():
             trade_side, comment = running_pos_trade_side_comm()
             trade_side = trade_side.lower()
 
+            print(comment)
+
+
             if comment == "second leg":
                 with lock_pairs_signal:
+
                     with open("pairs_signal.json", "r") as ps:
                         signal_store = json.load(ps)
 
-                    signal_store_dt = signal_store[SYMBOL_REAL]
+                    try:
+                        signal_store_dt = signal_store[SYMBOL_REAL]
+
+                        if signal_store_dt is None:
+                            signal_store_dt =  trade_side
+                    except KeyError:
+                        signal_store_dt = trade_side
 
                     if signal_store_dt != trade_side:
                         logger.info(f"signal changed to:{trade_side} to {signal_store_dt} closing the thread~")
@@ -1254,7 +1273,7 @@ def running_pos_trade_side_comm():
             return None
         
         authorized = mt5.login(login, password, server)
-        side, comment = 0,0
+        side, comment = "A",0
 
         if authorized:
             position = mt5.positions_get()
@@ -1340,4 +1359,6 @@ def seconds_to_next_interval(interval_minutes=30):
 
 
 if __name__ == "__main__":
-    riverse_trade_master()
+    # riverse_trade_master()
+    close_positions_of_this_pair(symbol=SYMBOL_REAL)
+    # riverse_position_monitoring()

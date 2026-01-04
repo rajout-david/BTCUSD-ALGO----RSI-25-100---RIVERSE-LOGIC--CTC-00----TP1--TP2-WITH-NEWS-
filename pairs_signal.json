@@ -1,8 +1,8 @@
 {
- "GBPNZD": "buy",
- "GBPUSD": "buy",
- "EURCAD": "",
- "EURJPY": "",
- "AUDJPY": "buy",
- "BTCUSD": "buy"
+    "GBPNZD": "buy",
+    "GBPUSD": "buy",
+    "EURCAD": "",
+    "EURJPY": "",
+    "AUDJPY": "buy",
+    "BTCUSD": "buy"
 }

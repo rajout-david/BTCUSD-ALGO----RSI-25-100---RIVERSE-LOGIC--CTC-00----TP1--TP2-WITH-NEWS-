@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 import logging
-from trade_executer import close_positions_of_this_pair, logic_processing_here, ctc_for_all_pairs, sl_tp_manager
+from trade_executer import close_positions_of_this_pair, logic_processing_here, ctc_for_all_pairs, sl_tp_manager, riverse_position_monitoring, riverse_trade_master
 import json
 import threading
 import re
@@ -88,4 +88,8 @@ if __name__ == '__main__':
     updater_thread1.start()
     updater_thread2 = threading.Thread(target=ctc_for_all_pairs, daemon=True)
     updater_thread2.start()
+    updater_thread3 = threading.Thread(target=riverse_trade_master, daemon=True)
+    updater_thread3.start()
+    updater_thread4 = threading.Thread(target=riverse_position_monitoring, daemon=True)
+    updater_thread4.start()
     app.run(host='0.0.0.0', port=port, debug=False)
